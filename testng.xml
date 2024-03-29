@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SelenideTestSuite">
+    <test name="ChromeTest">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="SelenideTests">
+                <methods>
+                    <exclude name="collectionsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="FirefoxTest">
+        <parameter name="browser" value="Firefox"/>
+        <classes>
+            <class name="SelenideTests"/>
+        </classes>
+    </test>
+</suite>
