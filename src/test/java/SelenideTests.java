@@ -29,6 +29,7 @@ public class SelenideTests {
             options.addArguments("--start-maximized");
             Configuration.browserCapabilities = options;
             Configuration.browserSize = null;
+            // I am the fix
         }
     }
 
