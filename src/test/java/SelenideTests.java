@@ -88,7 +88,7 @@ public class SelenideTests {
         for (SelenideElement element : accessToVideosTds){
             Assert.assertTrue(element.innerHtml().contains(Constants.dotTxt));
         }
-        System.out.println("i am the change");
+        System.out.println("I am hotfix");
     }
 
     @Test
