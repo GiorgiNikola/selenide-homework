@@ -29,7 +29,6 @@ public class SelenideTests {
             options.addArguments("--start-maximized");
             Configuration.browserCapabilities = options;
             Configuration.browserSize = null;
-            // I am the fix
         }
     }
 
@@ -88,6 +87,7 @@ public class SelenideTests {
         for (SelenideElement element : accessToVideosTds){
             Assert.assertTrue(element.innerHtml().contains(Constants.dotTxt));
         }
+        System.out.println("I am hotfix");
     }
 
     @Test
