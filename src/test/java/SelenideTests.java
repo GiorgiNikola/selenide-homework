@@ -30,6 +30,7 @@ public class SelenideTests {
             Configuration.browserCapabilities = options;
             Configuration.browserSize = null;
         }
+        // I AM The Change
     }
 
     @Test
