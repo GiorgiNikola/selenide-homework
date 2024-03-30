@@ -69,11 +69,7 @@ public class SelenideTests {
 
         ElementsCollection uiForJqueryTds = $$x("//td[text()='Kendo UI for jQuery']/following-sibling::td");
         for (int i = 0; i < uiForJqueryTds.size(); i++){
-            if (i == telerikTestStudioTds.size() - 1){
-                Assert.assertTrue(telerikTestStudioTds.get(i).innerHtml().contains(Constants.dotTxt));
-                break;
-            }
-            Assert.assertFalse(telerikTestStudioTds.get(i).innerHtml().contains(Constants.dotTxt));
+            Assert.assertTrue(uiForJqueryTds.get(i).innerHtml().contains(Constants.dotTxt));
         }
 
         SelenideElement telerikReportServer = $x("//p[contains(text(),'Telerik Report Server')]/parent::td/following-sibling::td[3]");
