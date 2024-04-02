@@ -1,38 +1,15 @@
-import com.codeborne.selenide.*;
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import ge.tbcitacademy.data.Constants;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SelenideTests {
-    @BeforeClass
-    @Parameters("browser")
-    public void setup(String browser){
-        if (browser.equalsIgnoreCase(Constants.chromeName)){
-            WebDriverManager.chromedriver().setup();
-            Configuration.browser = "chrome";
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--start-maximized");
-            Configuration.browserCapabilities = options;
-            Configuration.browserSize = null;
-        } else if (browser.equalsIgnoreCase(Constants.firefoxName)){
-            WebDriverManager.firefoxdriver().setup();
-            Configuration.browser = "firefox";
-            FirefoxOptions options = new FirefoxOptions();
-            // start maximized does not work for firefox
-            options.addArguments("--start-maximized");
-            Configuration.browserCapabilities = options;
-            Configuration.browserSize = null;
-        }
-        // I AM The Change
-    }
-
+public class SelenideTests extends TestConfig{
     @Test
     public void validateBundleOffers(){
         open(Constants.telerikURL);
@@ -162,8 +139,4 @@ public class SelenideTests {
         )));
     }
 
-    @AfterClass
-    public void tearDown(){
-        Selenide.closeWindow();
-    }
 }
