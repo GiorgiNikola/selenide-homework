@@ -51,6 +51,7 @@ public class SelenideTests2 extends TestConfig{
         sectionLinks.get(2).click();
         SelenideElement mobileSection = $(byTitle("Telerik UI for Xamarin Demos Overview")).ancestor(".row u-mb8").shouldBe(appear);
         sfa.assertAll();
+        System.out.println("I AM The Change");
     }
 
     @Test
