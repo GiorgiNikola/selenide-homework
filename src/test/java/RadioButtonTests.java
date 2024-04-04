@@ -28,6 +28,7 @@ public class RadioButtonTests extends ConfigTests{
         ElementsCollection checkBoxes = $$("#checkboxes input");
         checkBoxes.get(0).setSelected(false);
         sfa.assertTrue(checkBoxes.get(0).isSelected());
+        System.out.println("I am the Fix");
     }
 
     @AfterTest
