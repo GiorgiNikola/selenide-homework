@@ -18,5 +18,11 @@ public class Constants {
     tdTxt = "td", telerikReportTxt = "1 instance with 15 users",
     acceptCookies = "Accept Cookies", prioritySupportTxt = "Priority Support",
     kendoReactPrice = "999", kendoUiPrice = "1,149",
-    chromeName = "Chrome", firefoxName = "Firefox";
+    chromeName = "Chrome", firefoxName = "Firefox",
+    downloadFromGoogle = "Get it on Google Play",
+    downloadFromApple = "Download on the App Store",
+    downloadFromMicrosoft = "Get it from Microsoft",
+    firstPrice = "$1,699.00", publisher = "O'Reilly Media",
+    innerText = "O'Reilly Media",
+    firstBookName = "Learning JavaScript Design Patterns";
 }

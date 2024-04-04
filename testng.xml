@@ -6,18 +6,14 @@
     <test name="ChromeTest">
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="SelenideTests">
-                <methods>
-                    <exclude name="collectionsTest"/>
-                </methods>
-            </class>
+            <class name="SelenideTests2"/>
         </classes>
     </test>
 
     <test name="FirefoxTest">
         <parameter name="browser" value="Firefox"/>
         <classes>
-            <class name="SelenideTests"/>
+            <class name="SelenideTests2"/>
         </classes>
     </test>
 </suite>
