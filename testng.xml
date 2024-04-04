@@ -2,18 +2,10 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="SelenideTestSuite">
-    <test name="ChromeTest">
-        <parameter name="browser" value="Chrome"/>
-        <classes>
-            <class name="SelenideTests2"/>
-        </classes>
-    </test>
-
-    <test name="FirefoxTest">
-        <parameter name="browser" value="Firefox"/>
-        <classes>
-            <class name="SelenideTests2"/>
-        </classes>
-    </test>
+<suite name="AllTestSuite">
+    <suite-files>
+        <suite-file path="selenidesuite.xml"/>
+        <suite-file path="selenidesuite2.xml"/>
+    </suite-files>
 </suite>
+

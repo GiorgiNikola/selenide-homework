@@ -22,7 +22,14 @@ public class Constants {
     downloadFromGoogle = "Get it on Google Play",
     downloadFromApple = "Download on the App Store",
     downloadFromMicrosoft = "Get it from Microsoft",
-    firstPrice = "$1,699.00", publisher = "O'Reilly Media",
-    innerText = "O'Reilly Media",
-    firstBookName = "Learning JavaScript Design Patterns";
+    publisher = "O'Reilly Media", innerText = "O'Reilly Media",
+    firstBookName = "Learning JavaScript Design Patterns",
+    oneYearTxt = "+1 year", continueAsGuestTxt = "Continue as Guest",
+    lastName = "Nikoladze", companyName = "Nikola",
+    postalCode = "0163", myCountry = "Georgia",
+    continueTxt = "Continue",backTxt = "Back",
+    myPhone = "11111111", edgeName = "Edge";
+    public static final double unitPrice = 1699.00, maintenancePrice = 849.00,
+    unitDiscountPercent = 5, maintenanceDiscountPercent = 8,
+    unitPricePercent = 95, maintenancePricePercent = 92;
 }
