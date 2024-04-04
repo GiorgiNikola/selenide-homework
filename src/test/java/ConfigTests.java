@@ -1,27 +1,33 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import ge.tbcitacademy.data.Constants;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 public class TestConfig {
-    @BeforeClass
+    @BeforeSuite
+    public void config(){
+        Configuration.timeout = 12000;
+        Configuration.reopenBrowserOnFail = true;
+    }
+    @BeforeTest
     @Parameters("browser")
     public void setup(@Optional("chrome") String browser){
         if (browser.equalsIgnoreCase(Constants.chromeName)){
-            WebDriverManager.chromedriver().setup();
             Configuration.browser = "chrome";
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
             Configuration.browserCapabilities = options;
             Configuration.browserSize = null;
+        } else if (browser.equalsIgnoreCase(Constants.edgeName)){
+            Configuration.browser = "edge";
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("--start-maximized");
+            Configuration.browserCapabilities = options;
+            Configuration.browserSize = null;
         } else if (browser.equalsIgnoreCase(Constants.firefoxName)){
-            WebDriverManager.firefoxdriver().setup();
             Configuration.browser = "firefox";
             FirefoxOptions options = new FirefoxOptions();
             // start maximized does not work for firefox
