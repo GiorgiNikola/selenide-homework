@@ -3,13 +3,14 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import ge.tbcitacademy.data.Constants;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
-
-public class SelenideTests extends TestConfig{
+@Listeners({CustomSuiteListener.class, CustomTestListener.class, CustomReportListener.class})
+public class SelenideTests extends ConfigTests {
     @Test
     public void validateBundleOffers(){
         open(Constants.telerikURL);
@@ -61,7 +62,6 @@ public class SelenideTests extends TestConfig{
         for (SelenideElement element : accessToVideosTds){
             Assert.assertTrue(element.innerHtml().contains(Constants.dotTxt));
         }
-        System.out.println("I am hotfix");
     }
 
     @Test
@@ -104,13 +104,13 @@ public class SelenideTests extends TestConfig{
         checkBoxes.get(1).shouldHave(type(Constants.checkBoxTxt));
     }
 
-    @Test
+    @Test(description = "This should also fail")
     public void dropDownTest(){
         open(Constants.dropDownURL);
         SelenideElement dropDown = $(byId(Constants.dropDownTxt));
         dropDown.getSelectedOption().shouldHave(text(Constants.selectOptionTxt));
         dropDown.selectOption(Constants.option2Txt);
-        dropDown.getSelectedOption().shouldHave(text(Constants.option2Txt));
+        dropDown.getSelectedOption().shouldHave(text(Constants.option2Txt + "fail this"));
     }
 
     @Test
