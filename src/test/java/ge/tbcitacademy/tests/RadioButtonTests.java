@@ -22,7 +22,6 @@ public class RadioButtonTests extends ConfigTests{
         yesElement.click();
         sfa.assertTrue(yesElement.isSelected());
         sfa.assertAll();
-        System.out.println("I am the fix in file 1");
     }
 
     // ეს ტესტი აფეილებს ხუთჯერ
