@@ -1,38 +1,38 @@
+package ge.tbcitacademy.tests;
+
 import com.codeborne.selenide.*;
-import com.codeborne.selenide.conditions.Not;
 import ge.tbcitacademy.data.Constants;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class RadioButtonTests extends ConfigTests{
-    SoftAssert sfa = new SoftAssert();
+public class CheckboxTests extends ConfigTests {
+
+
     @BeforeMethod
     public void before(){
-        open(Constants.checkBoxURL);
         Configuration.reportsFolder = "CheckboxFailedTests";
     }
 
-    @Test
+    @Test(priority = 1, groups = "CheckBoxes-FrontEnd")
     public void uncheckCheckBoxTest(){
+        SoftAssert sfa = new SoftAssert();
+        open(Constants.checkBoxURL);
         Configuration.assertionMode = AssertionMode.SOFT;
         ElementsCollection checkBoxes = $$("#checkboxes input");
         checkBoxes.get(1).setSelected(true);
         sfa.assertFalse(checkBoxes.get(1).isSelected());
+        sfa.assertAll();
     }
 
-    @Test
+    @Test(priority = 2, groups = "CheckBoxes-FrontEnd")
     public void checkCheckBoxTest(){
         SoftAssert sfa = new SoftAssert();
+        open(Constants.checkBoxURL);
         ElementsCollection checkBoxes = $$("#checkboxes input");
         checkBoxes.get(0).setSelected(false);
         sfa.assertTrue(checkBoxes.get(0).isSelected());
-        System.out.println("I am the Fix");
-    }
-
-    @AfterTest
-    public void tear(){
         sfa.assertAll();
     }
 

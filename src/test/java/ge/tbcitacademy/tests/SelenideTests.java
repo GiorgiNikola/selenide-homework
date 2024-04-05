@@ -1,3 +1,5 @@
+package ge.tbcitacademy.tests;
+
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -14,7 +16,7 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 @Listeners({CustomSuiteListener.class, CustomTestListener.class, CustomReportListener.class})
 public class SelenideTests extends ConfigTests {
-    @Test
+    @Test(groups = "Selenide 1")
     public void validateBundleOffers(){
         open(Constants.telerikURL);
         SelenideElement pricingBtn = $x("//a[@class='TK-Menu-Item-Link'][text()='Pricing']");
@@ -67,7 +69,7 @@ public class SelenideTests extends ConfigTests {
         }
     }
 
-    @Test
+    @Test(groups = "Selenide 1")
     public void validateIndividualOffers(){
         open(Constants.telerikURL);
         SelenideElement acceptCookies = $(withText(Constants.acceptCookies));
@@ -98,7 +100,7 @@ public class SelenideTests extends ConfigTests {
         kendoUiPrice.shouldHave(text(Constants.kendoUiPrice));
     }
 
-    @Test
+    @Test(groups = "Selenide 1")
     public void checkBoxTest(){
         open(Constants.checkBoxURL);
         ElementsCollection checkBoxes = $$("form#checkboxes input");
@@ -107,7 +109,7 @@ public class SelenideTests extends ConfigTests {
         checkBoxes.get(1).shouldHave(type(Constants.checkBoxTxt));
     }
 
-    @Test(description = "This should also fail")
+    @Test(description = "This should also fail", groups = "Selenide 1")
     public void dropDownTest(){
         open(Constants.dropDownURL);
         SelenideElement dropDown = $(byId(Constants.dropDownTxt));
@@ -116,7 +118,7 @@ public class SelenideTests extends ConfigTests {
         dropDown.getSelectedOption().shouldHave(text(Constants.option2Txt + "fail this"));
     }
 
-    @Test
+    @Test(groups = "Selenide 1")
     public void collectionsTest(){
         open(Constants.textBoxURL);
         SelenideElement fullName = $(byId("userName"));

@@ -1,3 +1,5 @@
+package ge.tbcitacademy.tests;
+
 import com.codeborne.selenide.AssertionMode;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.FileDownloadMode;
@@ -10,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.*;
 
 public class ConfigTests {
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void initialSetup(){
         Configuration.timeout = 12000;
         Configuration.reopenBrowserOnFail = true;
@@ -18,25 +20,22 @@ public class ConfigTests {
         Configuration.fileDownload = FileDownloadMode.HTTPGET;
         Configuration.pageLoadTimeout = 12000;
     }
-    @BeforeTest
+    @BeforeTest(alwaysRun = true)
     @Parameters("browser")
     public void setup(@Optional("chrome") String browser){
         if (browser.equalsIgnoreCase(Constants.chromeName)){
-            WebDriverManager.chromedriver().setup();
             Configuration.browser = "chrome";
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
             Configuration.browserCapabilities = options;
             Configuration.browserSize = null;
         } else if (browser.equalsIgnoreCase(Constants.edgeName)){
-            WebDriverManager.edgedriver().setup();
             Configuration.browser = "edge";
             EdgeOptions options = new EdgeOptions();
             options.addArguments("--start-maximized");
             Configuration.browserCapabilities = options;
             Configuration.browserSize = null;
         } else if (browser.equalsIgnoreCase(Constants.firefoxName)){
-            WebDriverManager.firefoxdriver().setup();
             Configuration.browser = "firefox";
             FirefoxOptions options = new FirefoxOptions();
             // start maximized does not work for firefox
@@ -46,8 +45,4 @@ public class ConfigTests {
         }
     }
 
-    @AfterClass
-    public void tearDown(){
-        Selenide.closeWindow();
-    }
 }

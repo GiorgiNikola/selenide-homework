@@ -1,8 +1,11 @@
+package ge.tbcitacademy.tests;
+
 import com.codeborne.selenide.*;
 import ge.tbcitacademy.data.Constants;
 import ge.tbcitacademy.listeners.CustomReportListener;
 import ge.tbcitacademy.listeners.CustomSuiteListener;
 import ge.tbcitacademy.listeners.CustomTestListener;
+import ge.tbcitacademy.tests.ConfigTests;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -16,7 +19,7 @@ import static com.codeborne.selenide.Selenide.*;
 @Listeners({CustomSuiteListener.class, CustomTestListener.class, CustomReportListener.class})
 public class SelenideTests2 extends ConfigTests {
 
-    @Test
+    @Test(groups = "Selenide 2")
     public void validateDemosDesign(){
         SoftAssert sfa = new SoftAssert();
         open(Constants.telerikURL);
@@ -60,7 +63,7 @@ public class SelenideTests2 extends ConfigTests {
         sfa.assertAll();
     }
 
-    @Test
+    @Test(groups = "Selenide 2")
     public void validateOrderMechanics(){
         SoftAssert sfa = new SoftAssert();
         open(Constants.telerikURL);
@@ -133,7 +136,7 @@ public class SelenideTests2 extends ConfigTests {
         sfa.assertAll();
     }
 
-    @Test
+    @Test(groups = "Selenide 2")
     public void chainedLocatorsTest(){
         open("https://demoqa.com/books");
         ElementsCollection books = $$(".rt-tr-group");
@@ -146,7 +149,7 @@ public class SelenideTests2 extends ConfigTests {
         }
     }
 
-    @Test(description = "This test intentionally fails!")
+    @Test(description = "This test intentionally fails!", groups = "Selenide 2")
     public void softAssertTest(){
         SoftAssert sfa = new SoftAssert();
         open("https://demoqa.com/books");
