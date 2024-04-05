@@ -1,5 +1,8 @@
 import com.codeborne.selenide.*;
 import ge.tbcitacademy.data.Constants;
+import ge.tbcitacademy.listeners.CustomReportListener;
+import ge.tbcitacademy.listeners.CustomSuiteListener;
+import ge.tbcitacademy.listeners.CustomTestListener;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
