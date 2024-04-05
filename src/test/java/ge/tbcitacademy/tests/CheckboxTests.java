@@ -24,7 +24,6 @@ public class CheckboxTests extends ConfigTests {
         checkBoxes.get(1).setSelected(true);
         sfa.assertFalse(checkBoxes.get(1).isSelected());
         sfa.assertAll();
-        System.out.println("I am the change in File2");
     }
 
     @Test(priority = 2, groups = "CheckBoxes-FrontEnd")

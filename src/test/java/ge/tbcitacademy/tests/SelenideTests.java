@@ -116,7 +116,6 @@ public class SelenideTests extends ConfigTests {
         dropDown.getSelectedOption().shouldHave(text(Constants.selectOptionTxt));
         dropDown.selectOption(Constants.option2Txt);
         dropDown.getSelectedOption().shouldHave(text(Constants.option2Txt + "fail this"));
-        System.out.println("I am the change in file3");
     }
 
     @Test(groups = "Selenide 1")
