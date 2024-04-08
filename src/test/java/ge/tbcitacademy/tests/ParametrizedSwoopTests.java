@@ -40,6 +40,7 @@ public class ParametrizedSwoopTests extends ConfigTests{
                 });
         int actualPrice = atomicExpectedPrice.get();
         Assert.assertEquals(actualPrice, originalPrice - discount);
+        System.out.println("I am the change in file 3");
     }
 
     @Test(dataProvider = "offerNamesDataProvider", dataProviderClass = CustomDataProvider.class)
