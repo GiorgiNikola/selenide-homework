@@ -26,7 +26,6 @@ public class DependsOnTest extends ConfigTests{
         for (SelenideElement offer : offers){
             offer.shouldHave(Condition.innerText(Constants.burgerTxt));
         }
-        System.out.println("I am the fix in file1");
     }
 
     @Test(dependsOnMethods = "searchTest")

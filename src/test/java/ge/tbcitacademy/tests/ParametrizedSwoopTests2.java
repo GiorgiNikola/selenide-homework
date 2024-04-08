@@ -28,7 +28,6 @@ public class ParametrizedSwoopTests2 extends ConfigTests{
         sections.filter(Condition.innerText(sectionName)).get(0).click();
         SelenideElement divideIntoFourMonthsBtn = $(".MenuSponsored.TbcGanacileba")
                 .shouldBe(Condition.visible);
-        System.out.println("I am the fix in file4");
     }
 
     @AfterMethod
