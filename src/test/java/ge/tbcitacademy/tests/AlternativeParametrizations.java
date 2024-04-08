@@ -37,6 +37,7 @@ public class AlternativeParametrizations extends ConfigTests{
         SelenideElement studentName = $x("//td[normalize-space()='Student Name']")
                 .sibling(0)
                 .shouldHave(Condition.text(firstName + " " + lastName));
+        System.out.println("I am the fix in file2");
     }
 
     @AfterMethod
