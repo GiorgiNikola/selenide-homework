@@ -3,30 +3,34 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="AllTestSuite" >
-    <test name="GroupsTest">
-        <groups>
-            <define name="SelenideTestsCombined">
-                <include name="Selenide 1"/>
-                <include name="Selenide 2"/>
-            </define>
-            <run>
-                <include name="SelenideTestsCombined"/>
-            </run>
-        </groups>
-        <packages>
-            <package name="ge.tbcitacademy.tests"/>
-        </packages>
-
+    <test name="Parameter Test">
+        <parameter name="firstName" value="John"/>
+        <parameter name="lastName" value="Doe"/>
+        <parameter name="gender" value="Male"/>
+        <parameter name="mobileNumber" value="1234567890"/>
+        <classes>
+            <class name="ge.tbcitacademy.tests.AlternativeParametrizations"/>
+        </classes>
     </test>
-    <test name="FrontendTest" thread-count="6" parallel="classes">
-        <groups>
-            <run>
-                <include name=".*FrontEnd"/>
-            </run>
-        </groups>
-        <packages>
-            <package name="ge.tbcitacademy.tests"/>
-        </packages>
+
+    <test name="Parameter Test 2">
+        <parameter name="firstName" value="Jane"/>
+        <parameter name="lastName" value="Smith"/>
+        <parameter name="gender" value="Female"/>
+        <parameter name="mobileNumber" value="9876543210"/>
+        <classes>
+            <class name="ge.tbcitacademy.tests.AlternativeParametrizations"/>
+        </classes>
+    </test>
+
+    <test name="Parameter Test 3">
+        <parameter name="firstName" value="Bob"/>
+        <parameter name="lastName" value="Johnson"/>
+        <parameter name="gender" value="Other"/>
+        <parameter name="mobileNumber" value="5555555555"/>
+        <classes>
+            <class name="ge.tbcitacademy.tests.AlternativeParametrizations"/>
+        </classes>
     </test>
 </suite>
 

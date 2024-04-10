@@ -28,7 +28,9 @@ public class Constants {
     lastName = "Nikoladze", companyName = "Nikola",
     postalCode = "0163", myCountry = "Georgia",
     continueTxt = "Continue",backTxt = "Back",
-    myPhone = "11111111", edgeName = "Edge";
+    myPhone = "11111111", edgeName = "Edge",
+    swoopLink = "https://www.swoop.ge/",
+    burgerTxt = "ბურგერ", formLink = "https://demoqa.com/automation-practice-form";
     public static final double unitPrice = 1699.00, maintenancePrice = 849.00,
     unitDiscountPercent = 5, maintenanceDiscountPercent = 8,
     unitPricePercent = 95, maintenancePricePercent = 92;

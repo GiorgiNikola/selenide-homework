@@ -18,7 +18,7 @@ public class ConfigTests {
         Configuration.reopenBrowserOnFail = true;
         Configuration.screenshots = true;
         Configuration.fileDownload = FileDownloadMode.HTTPGET;
-        Configuration.pageLoadTimeout = 12000;
+        Configuration.pageLoadTimeout = 20000;
     }
     @BeforeTest(alwaysRun = true)
     @Parameters("browser")
